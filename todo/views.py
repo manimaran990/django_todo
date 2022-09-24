@@ -46,3 +46,7 @@ def delete_todo(request, id):
         return_todo.delete()
         return HttpResponseRedirect(reverse("todo:index"))
     return render(request, "todo/delete.html")
+
+def detail_todo(request, id):
+    return_todo = get_object_or_404(Todo, id=id)
+    return render(request, "todo/detail.html", { "todo": return_todo })

@@ -5,8 +5,8 @@
 
 <ul>
     {% for todo in todos %}
-    <li>{{ todo }}</li> <a href="{% url 'todo:update' todo.id %}">edit</a>
-    <a href="{% url 'todo:delete' todo.id %}">delete</a>
+    <li><a href="{% url 'todo:detail' todo.id %}">{{ todo }} </a>
+    </li>
     {% endfor %}
 </ul>
 
